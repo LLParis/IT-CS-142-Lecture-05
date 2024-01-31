@@ -23,6 +23,7 @@ public class Lecture05 {
         // NOTE: FIRST try to predict what the output will be WITHOUT actually running
         // the program
         // write down your answer here
+        // 13 21
 
         // NEXT run the program and see the results (you can copy-and-paste it here)
         // (I'm not including it in the starter project so that people don't just run
@@ -31,14 +32,18 @@ public class Lecture05 {
         // LASTLY compare the two results and if they're different go back and figure
         // out
         // why the computer's output is different from what you predicted.
+        // The results from analytically discovering the output and running the program were the same.
 
         // Put your answer for #5B here:
         // (Do this like #5A - predict, write your prediction, run the code, then
         // explain any differences)
+        // 5 6
 
         // Put your answer for #5C here:
+        // 6 5
 
         // Put your answer for #5D here:
+        // 7 11
 
         // Put your answer for #8 here:
         // Instead of correcting the code write a brief explanation of how to fix it
