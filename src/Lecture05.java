@@ -1,14 +1,41 @@
-
 // Lecture 05
 // London Paris
 // IT-CS-142
+import java.util.*;
 
 public class Lecture05 {
 
     public static String season(int month, int day) {
-        return "PLEASE FILL IN THE 'season()' METHOD!";
+        if ((month < 3) || (month == 3 && day <= 15) || (month == 12 && day >= 16)) {
+            return "winter";
+        } else if ((month < 6) || (month == 6 && day <= 15)) {
+            return "spring";
+        } else if ((month < 9) || (month == 9 && day <= 15)) {
+            return "summer";
+        } else {
+            return "fall";
+        }
     }
 
+    public static void redundant(int a, int x) {
+        a = 2;
+        if (x < 30) {
+            x++;
+        }
+        System.out.println("Java is awesome!" + x );
+    }
+    public static void printRange(int A, int B) {
+        if (A <= B) {
+            for (int i = A; i <= B; i++) {
+                System.out.print(i + " ");
+            }
+        } else {
+            for (int i = A; i >= B; i--) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
     public static void test_printRange(int A, int B) {
     }
 
@@ -48,27 +75,52 @@ public class Lecture05 {
         // Put your answer for #8 here:
         // Instead of correcting the code write a brief explanation of how to fix it
         // and include only the lines that you'll change
+        // To fix this logic error, you should add an else block to the outer if statement to handle the case when
+        // the number is odd
+        // and modify the inner else block to handle even numbers that are not divisible by 6
 
         // Put your answer for #10 here:
         // NOTE: You'll need to write the method on, say, line 2
         // (i.e., outside of this main() method)
         // and then call that method right here
+        redundant(2, 3);
 
         // Put your answer for #15 here:
+        // the cumulative sum holder 'sum' is within the for loop causing it to be initialized to zero during each iteration.
+        // To fix the code, I would move the sum variable to above the loop so that its scope is increased and only increment it within the loop.
 
         // Put your answer for #16 here:
+        // The issue with the provided code is that it exits and returns the first factor of n it finds,
+        // instead of counting all the factors of n. This is due to incorrect placement of the return i statement.
+        // We need to move that statement further down so that the program can count all the factors of n before exiting.
+
 
         // Put your answer for #17 here:
         // Make sure that this compiles & runs
+        // sumProduct();
+
 
         // Put your answer for #23 here:
+        String name = "Marla Singer";
+
+
+        int spaceIndex = name.indexOf(" ");
+        String lastName = name.substring(spaceIndex + 1);
+        String firstInitial = name.substring(0, 1);
+
+        String result = lastName + ", " + firstInitial + ".";
+        System.out.println(result);
 
         // EXERCISES:
 
         // Put your answer for #3 here:
         // You will need to add the method in above main(), but then call it here
+        System.out.println(season(01, 31));
 
         // Put your answer for #6 here:
+        printRange(2,7);
+        printRange(19,11);
+        printRange(5,5);
 
         // UNIT TESTS:
         System.out.println("");
@@ -82,6 +134,19 @@ public class Lecture05 {
         testSeasonsSpring();
         testSeasonsSummer();
         testSeasonsFall();
+    }
+
+    public static void sumProduct() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter numbers to multiply or any non-numeric value to stop.");
+
+        double sum = 1;
+        while (input.hasNext()) {
+            int num = input.nextInt();
+            sum *= num;
+            System.out.println("Current cumulative product: " + sum);
+            System.out.println("Enter another number (or any non-numeric value to stop):");
+        }
     }
 
     // TEST METHODS:
